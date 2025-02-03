@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <string.h>
+struct user{
+    char name[20];
+    char pass[10];
+    int balance;
+    int deposit[10];
+    int withdraw[10];
+} user1={"vinay", "443646", 0};
+int d_i=0,w_i=0;
+void Deposit(){
+    
+        printf("\n\n\t\tplease Enter your password:");
+        char pin[10];
+        int i=0;
+        char ch;
+        while((ch=getchar())!='\r'&&i<6){
+            putchar('*');
+            pin[i++]=ch;
+        }
+}
+        
+        int i=0;
+        pin[i]='\0';
+        if(strcmp(pin,user1.pass)==0){
+            printf("\nwelcome %s",user1.name);
+            printf("\nEnter Deposit amount: ");
+            int dep;
+            scanf("%d",&dep);
+            user1.balance+=dep;
+            printf("Deposit successful! New Balance: %d\n",user1.balance);
+        } else {
+            printf("Invalid Password!\n");
+        }
+void balanceEnquiry() {
+    printf("Your current balance is: %d\n",user1.balance);
+}
+
+void main(){
+    int ch;
+    while(1){
+        printf("\n\n\t\t*********************************");
+        printf("\n\t\t*   welcome To ATM Machine       *");
+        printf("\n\t\t*********************************");
+        printf("\n\t\t1>Deposit");
+        printf("\n\t\t2>Withdraw");
+        printf("\n\t\t3>Balance Enquiry");
+        printf("\n\t\t4>Transaction History");
+        printf("\n\t\t5>Pin Change");
+        printf("\n\t\t6>Cancel");
+        printf("\n\t\t\nPlease Enter your choice: ");
+        scanf("%d", &ch);
+        getchar();
+        switch(ch){
+            case 1:Deposit();
+                   break;
+            case 2:Withdraw();
+                   break;
+            case 3:Balance Enquiry();
+                   break;
+            case 4:Transaction History();
+                   break;
+            case 5:Pin charge();
+                   break;
+            case 6:break;
+                   
+        }
+        break;
+    }
+    return 0;
+}
+
